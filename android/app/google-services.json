@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "833001575431",
+    "project_id": "chat-app-hands-on",
+    "storage_bucket": "chat-app-hands-on.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833001575431:android:11726402175bbd0c11c6a2",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833001575431-ovlir2kujkgvgarr27veq16qf3f93rro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDE_MtCE-T4Q1yTvJHUqil3JHawsmrT9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833001575431-ovlir2kujkgvgarr27veq16qf3f93rro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
