@@ -2,6 +2,7 @@ import 'package:chat_app/my_user.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:bubble/bubble.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 
 import 'chat_content.dart';
@@ -32,10 +33,12 @@ class _ChatScreenState extends State<ChatScreen> {
     final chatContent = ChatContent.fromSnapshot(event.snapshot);
     setState(() {
       chatContents.add(chatContent);
-      _scrollController.animateTo(
-        _scrollController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.fastOutSlowIn,
+      SchedulerBinding.instance.addPostFrameCallback(
+        (timeStamp) => _scrollController.animateTo(
+          _scrollController.position.maxScrollExtent,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.fastOutSlowIn,
+        ),
       );
     });
   }
@@ -142,7 +145,8 @@ class _ChatScreenState extends State<ChatScreen> {
     final chatContent = ChatContent(
         id: '',
         message: _textController.text,
-        userId: MyUser.instance.userId ?? '');
+        userId: MyUser.instance.userId ?? '',
+        userName: MyUser.instance.name ?? 'no name');
     await _mainRef.push().set(chatContent.toJson());
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
       content: Text('追加しました。'),
