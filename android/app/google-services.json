@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "833001575431",
+    "firebase_url": "https://chat-app-hands-on-default-rtdb.firebaseio.com",
     "project_id": "chat-app-hands-on",
     "storage_bucket": "chat-app-hands-on.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "833001575431-ovlir2kujkgvgarr27veq16qf3f93rro.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "833001575431-dsa0dbh7u87qp9na27b0rv1fph8duum0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chatApp"
+              }
             }
           ]
         }

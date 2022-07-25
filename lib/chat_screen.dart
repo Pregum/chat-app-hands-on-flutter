@@ -2,6 +2,7 @@ import 'package:chat_app/my_user.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:bubble/bubble.dart';
+import 'package:flutter/services.dart';
 
 import 'chat_content.dart';
 
@@ -16,23 +17,7 @@ class _ChatScreenState extends State<ChatScreen> {
   final _mainRef = FirebaseDatabase.instance.ref().child('chat_contents');
   final _textController = TextEditingController();
 
-  final chatContents = <ChatContent>[
-    // ChatContent(
-    //     id: '1', message: 'test 1', userId: MyUser.instance.userId ?? ''),
-    // ChatContent(id: '2', message: 'test 1', userId: ''),
-    // ChatContent(
-    //     id: '3', message: 'test 1', userId: MyUser.instance.userId ?? ''),
-    // ChatContent(
-    //     id: '4', message: 'test 1', userId: MyUser.instance.userId ?? ''),
-    // ChatContent(id: '5', message: 'test 1', userId: ''),
-    // ...List<ChatContent>.generate(
-    //   30,
-    //   (index) => ChatContent(
-    //       id: (index + 5).toString(),
-    //       message: 'test ${index + 5}',
-    //       userId: index.isEven ? '' : MyUser.instance.userId ?? ''),
-    // ),
-  ];
+  final chatContents = <ChatContent>[];
 
   @override
   void initState() {
@@ -54,33 +39,27 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(8.0),
-        height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Expanded(
               child: TextField(
+                keyboardType: TextInputType.text,
+                minLines: 1,
+                maxLines: 1,
+                // onSubmitted: (_) async => await _sendMessage(context),
                 controller: _textController,
               ),
             ),
             IconButton(
               icon: const Icon(Icons.send),
               onPressed: () async {
-                final chatContent = ChatContent(
-                    id: '',
-                    message: _textController.text,
-                    userId: MyUser.instance.userId ?? '');
-                await _mainRef.push().set(chatContent.toJson());
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                  content: Text('追加しました。'),
-                ));
-                _textController.clear();
+                await _sendMessage(context);
               },
             )
           ],
         ),
-        // color: Colors.grey,
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -121,5 +100,17 @@ class _ChatScreenState extends State<ChatScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _sendMessage(BuildContext context) async {
+    final chatContent = ChatContent(
+        id: '',
+        message: _textController.text,
+        userId: MyUser.instance.userId ?? '');
+    await _mainRef.push().set(chatContent.toJson());
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      content: Text('追加しました。'),
+    ));
+    _textController.clear();
   }
 }

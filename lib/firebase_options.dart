@@ -52,6 +52,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '833001575431',
     projectId: 'chat-app-hands-on',
     authDomain: 'chat-app-hands-on.firebaseapp.com',
+    databaseURL: 'https://chat-app-hands-on-default-rtdb.firebaseio.com',
     storageBucket: 'chat-app-hands-on.appspot.com',
   );
 
@@ -60,6 +61,7 @@ class DefaultFirebaseOptions {
     appId: '1:833001575431:android:11726402175bbd0c11c6a2',
     messagingSenderId: '833001575431',
     projectId: 'chat-app-hands-on',
+    databaseURL: 'https://chat-app-hands-on-default-rtdb.firebaseio.com',
     storageBucket: 'chat-app-hands-on.appspot.com',
   );
 
@@ -68,6 +70,7 @@ class DefaultFirebaseOptions {
     appId: '1:833001575431:ios:0c8b03a407ab084b11c6a2',
     messagingSenderId: '833001575431',
     projectId: 'chat-app-hands-on',
+    databaseURL: 'https://chat-app-hands-on-default-rtdb.firebaseio.com',
     storageBucket: 'chat-app-hands-on.appspot.com',
     iosClientId: '833001575431-dsa0dbh7u87qp9na27b0rv1fph8duum0.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatApp',
