@@ -11,6 +11,7 @@ import 'name_generator.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+    name: 'chat-app-hands-on',
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
