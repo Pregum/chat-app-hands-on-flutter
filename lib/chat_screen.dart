@@ -75,6 +75,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text('追加しました。'),
                 ));
+                _textController.clear();
               },
             )
           ],
