@@ -15,7 +15,7 @@ class ChatContent {
   }) : createdAt = createdAt ?? DateTime.now();
 
   factory ChatContent.fromSnapshot(DataSnapshot data) {
-    final rawData = data.value as Map<String, Object>;
+    final rawData = Map<String, dynamic>.from(data.value as Map);
     final id = rawData['id'] as String? ?? '';
     final message = rawData['message'] as String? ?? '';
     final userId = rawData['user_id'] as String? ?? '';
