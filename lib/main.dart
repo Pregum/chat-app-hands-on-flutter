@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 import 'chat_screen.dart';
@@ -11,7 +12,7 @@ import 'name_generator.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    name: 'chat-app-hands-on',
+    name: kIsWeb ? null : 'chat-app-hands-on',
     options: DefaultFirebaseOptions.currentPlatform,
   );
 

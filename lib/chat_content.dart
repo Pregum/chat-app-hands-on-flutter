@@ -23,7 +23,7 @@ class ChatContent {
     final message = rawData['message'] as String? ?? '';
     final userId = rawData['user_id'] as String? ?? '';
     final rawCreatedAt = rawData['created_at'] as int? ?? 0;
-    final userName = rawData['user_name'] as String? ?? '';
+    final userName = rawData['user_name'] as String? ?? 'unknown name';
     final createdAt = DateTime.fromMicrosecondsSinceEpoch(rawCreatedAt);
     return ChatContent(
       id: id,
