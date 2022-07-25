@@ -6,13 +6,16 @@ class ChatContent {
   String message;
   DateTime createdAt;
   String userId;
+  String userName;
 
   ChatContent({
     required this.id,
     required this.message,
     required this.userId,
+    String? userName,
     DateTime? createdAt,
-  }) : createdAt = createdAt ?? DateTime.now();
+  })  : createdAt = createdAt ?? DateTime.now(),
+        userName = userName ?? 'no name';
 
   factory ChatContent.fromSnapshot(DataSnapshot data) {
     final rawData = Map<String, dynamic>.from(data.value as Map);
@@ -20,11 +23,13 @@ class ChatContent {
     final message = rawData['message'] as String? ?? '';
     final userId = rawData['user_id'] as String? ?? '';
     final rawCreatedAt = rawData['created_at'] as int? ?? 0;
+    final userName = rawData['user_name'] as String? ?? '';
     final createdAt = DateTime.fromMicrosecondsSinceEpoch(rawCreatedAt);
     return ChatContent(
       id: id,
       message: message,
       userId: userId,
+      userName: userName,
       createdAt: createdAt,
     );
   }
@@ -34,7 +39,8 @@ class ChatContent {
       'id': id,
       'message': message,
       'user_id': userId,
-      'created_at': createdAt.millisecondsSinceEpoch
+      'user_name': userName,
+      'created_at': createdAt.millisecondsSinceEpoch,
     };
   }
 }

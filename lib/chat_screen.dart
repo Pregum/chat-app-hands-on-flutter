@@ -71,26 +71,38 @@ class _ChatScreenState extends State<ChatScreen> {
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   final message = chatContents[index];
-                  return Bubble(
-                    margin: const BubbleEdges.only(
-                      top: 10.0,
-                      left: 8.0,
-                      right: 8.0,
-                    ),
-                    padding: const BubbleEdges.symmetric(
-                      horizontal: 12.0,
-                      vertical: 12.0,
-                    ),
-                    alignment:
-                        message.isMine ? Alignment.topRight : Alignment.topLeft,
-                    nip:
-                        message.isMine ? BubbleNip.rightTop : BubbleNip.leftTop,
-                    color: message.isMine
-                        ? const Color.fromRGBO(255, 255, 199, 1.0)
-                        : null,
-                    child: Text(
-                      message.message,
-                    ),
+                  return Column(
+                    children: [
+                      if (!message.isMine)
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 8.0, bottom: 4.0, top: 4.0),
+                          child: Text(message.userName),
+                        ),
+                      Bubble(
+                        margin: const BubbleEdges.only(
+                          top: 10.0,
+                          left: 8.0,
+                          right: 8.0,
+                        ),
+                        padding: const BubbleEdges.symmetric(
+                          horizontal: 12.0,
+                          vertical: 12.0,
+                        ),
+                        alignment: message.isMine
+                            ? Alignment.topRight
+                            : Alignment.topLeft,
+                        nip: message.isMine
+                            ? BubbleNip.rightTop
+                            : BubbleNip.leftTop,
+                        color: message.isMine
+                            ? const Color.fromRGBO(255, 255, 199, 1.0)
+                            : null,
+                        child: Text(
+                          message.message,
+                        ),
+                      ),
+                    ],
                   );
                 },
                 itemCount: chatContents.length,
