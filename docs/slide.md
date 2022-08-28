@@ -217,8 +217,9 @@ FlutterのUIは全て**ウィジェット**
 ## 作成の流れ
 
 1. Firebaseのプロジェクト作成
-2. 実際に書き込んでみる。
-3. よくあるチャットUIを作成する。
+2. 受信メッセージをリスト形式で表示
+3. 送信用メッセージ入力欄を作成
+4. デザインを調整
 
 
 ---
@@ -234,7 +235,7 @@ git clone git@github.com:Pregum/chat-app-hands-on-flutter.git
 
 ---
 
-## step1. Firebaseに接続しよう
+## step1. Firebaseに接続
 
 cloneしたプロジェクトに既にプロジェクトに接続されているため、今回はそのプロジェクトを使用します。
 
@@ -243,7 +244,17 @@ https://firebase.google.com/docs/flutter/setup?platform=android
 
 ---
 
-## step2. 
+## step2. 受信メッセージをリスト形式で表示
+
+step2.dartファイルをmain.dartファイルへ
+コピー&ペーストしてください。
+
+---
+
+## step3. 送信用メッセージ入力欄を作成
+
+step3.dartファイルをmain.dartファイルへ
+コピー&ペーストしてください。
 
 ---
 ## 完成 :tada: :christmas_tree: :dart: :beer:
