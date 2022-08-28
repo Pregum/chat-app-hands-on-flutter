@@ -91,7 +91,6 @@ Flutterで個人アプリを
 <ul>
   <li>いい感じのUIが標準ライブラリで作れる</li>
   <li>アプリを起動しながらレイアウトの微調整が可能</li>
-  <li>Debugツールが使いやすい</li>
 </ul>
 
 ---
@@ -104,7 +103,6 @@ https://github.com/Pregum/chat-app-hands-on-flutter
 
 * チャット送信機能
 * メッセージ受信機能
-* 
 
 
 
@@ -216,7 +214,7 @@ FlutterのUIは全て**ウィジェット**
 ---
 ## 作成の流れ
 
-1. Firebaseのプロジェクト作成
+1. Firebaseに接続
 2. 受信メッセージをリスト形式で表示
 3. 送信用メッセージ入力欄を作成
 4. デザインを調整
@@ -260,7 +258,7 @@ step3.dartファイルをmain.dartファイルへ
 
 ## step4. デザインを調整
 
-main.dartをstep4.dartへ
+step4.dartをmain.dartへ
 コピー&ペーストしてください。
 
 
