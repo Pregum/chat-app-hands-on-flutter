@@ -108,7 +108,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: [
             Expanded(
               child: Container(
-                color: Color.fromARGB(188, 4, 170, 192),
+                color: const Color.fromARGB(188, 4, 170, 192),
                 height: MediaQuery.of(context).size.height,
                 child: ListView.builder(
                   controller: _scrollController,
