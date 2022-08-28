@@ -12,7 +12,7 @@ size: 16:9
 
  
 # Chatアプリハンズオン 
-## by Flutter
+## with Flutter
 
 pregum
  
