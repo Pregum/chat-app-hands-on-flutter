@@ -1,5 +1,6 @@
 import 'package:chat_app/my_user.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:intl/intl.dart';
 
 class ChatContent {
   String id;
@@ -24,7 +25,7 @@ class ChatContent {
     final userId = rawData['user_id'] as String? ?? '';
     final rawCreatedAt = rawData['created_at'] as int? ?? 0;
     final userName = rawData['user_name'] as String? ?? 'unknown name';
-    final createdAt = DateTime.fromMicrosecondsSinceEpoch(rawCreatedAt);
+    final createdAt = DateTime.fromMillisecondsSinceEpoch(rawCreatedAt);
     return ChatContent(
       id: id,
       message: message,
@@ -48,5 +49,10 @@ class ChatContent {
 extension ChatContentEx on ChatContent {
   bool get isMine {
     return userId == MyUser.instance.userId;
+  }
+
+  String toCreatedStr() {
+    final formatter = DateFormat('yyyy-MM-dd HH:mm');
+    return formatter.format(createdAt);
   }
 }

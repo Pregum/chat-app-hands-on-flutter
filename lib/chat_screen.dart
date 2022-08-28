@@ -46,6 +46,9 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('チャットアプリ'),
+      ),
       body: GestureDetector(
         onTap: () {
           primaryFocus?.unfocus();
@@ -100,6 +103,19 @@ class _ChatScreenState extends State<ChatScreen> {
                                 : null,
                             child: Text(
                               message.message,
+                            ),
+                          ),
+                          Align(
+                            alignment: message.isMine
+                                ? Alignment.centerRight
+                                : Alignment.centerLeft,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 16.0, vertical: 4.0),
+                              child: Text(
+                                message.toCreatedStr(),
+                                style: Theme.of(context).textTheme.caption,
+                              ),
                             ),
                           ),
                         ],
