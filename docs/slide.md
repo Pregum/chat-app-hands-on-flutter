@@ -2,7 +2,7 @@
 marp: true
 theme: gaia
 author: pregum
-header: Todo アプリ ハンズオン
+header: Chat アプリ ハンズオン
 paginate: true
 footer: pregum
 size: 16:9
@@ -11,7 +11,7 @@ size: 16:9
 <!-- headingDivider: 1 -->
 
  
-# Todoアプリハンズオン 
+# Chatアプリハンズオン 
 ## by Flutter
 
 pregum
@@ -23,7 +23,7 @@ pregum
 * Flutterとネイティブアプリとの違い
 * なぜ他のXPではなくFlutterなのか？:thinking:
 * 今日作るアプリについて
-* TodoApp作成
+* ChatApp作成
 * (時間があれば)、質疑応答
 
 ---
@@ -205,7 +205,7 @@ FlutterのUIは全て**ウィジェット**
 命令的UIは**どのようにしたいかをコードで伝える** (How)
 
 ---
-## Todoアプリで使う主なウィジェット
+## Chatアプリで使う主なウィジェット
 
 * **Column**
   * 縦並びでウィジェットを配置してくれるウィジェット
