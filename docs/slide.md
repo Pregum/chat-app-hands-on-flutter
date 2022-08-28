@@ -216,89 +216,34 @@ FlutterのUIは全て**ウィジェット**
 ---
 ## 作成の流れ
 
-1. Flutterのプロジェクト作成
-2. サンプルアプリ(カウンターアプリ)動作確認
-3. Firebaseのプロジェクト作成
-4. 実際に書き込んでみる。
-5. よくあるチャットUIを作成する。
+1. Firebaseのプロジェクト作成
+2. 実際に書き込んでみる。
+3. よくあるチャットUIを作成する。
 
 
 ---
-## プロジェクト作成
 
-VS Codeで新規プロジェクトを作成します。
+## プロジェクトのクローン
 
-プロジェクト名は何でも大丈夫です。
-特になければ  `hands_on_chat_app`でお願いします。
+下記コマンドを叩いて
+テンプレートのプロジェクトをローカルにクローンします。
 
----
-
-## サンプル(カウンターアプリ)動作確認
-
-作成したプロジェクトをAndroid エミュレータで動かしてみます。
-
-ここではVS Codeを使用します。
-
-`main.dart`をVSCode上で選択後、起動先エミュレータを設定します。
-
-![](images/image_1_1.png)
-
-その後、F5で無事起動すればOK
+`
+git clone git@github.com:Pregum/chat-app-hands-on-flutter.git
+`
 
 ---
 
-## Firebaseのプロジェクト作成
+## step1. Firebaseに接続しよう
 
-* FirebaseのRealtime Databaseを使用するため、Firebaseのプロジェクトを作成します。
+cloneしたプロジェクトに既にプロジェクトに接続されているため、今回はそのプロジェクトを使用します。
 
----
-
-## Firebase CLIのインストール
-
-下記サイトからFirebase CLIをダウンロードします。
-
-https://firebase.google.com/docs/cli?authuser=0&hl=ja#install_the_firebase_cli
-
-ダウンロードしたらプロジェクトのフォルダ直下に配置します。
+自分でプロジェクト入れる場合は、下記サイトに沿って入れてみてください。
+https://firebase.google.com/docs/flutter/setup?platform=android
 
 ---
 
-## Firebase CLIのパスを通す
-
-firebase-toolsを配置した場所で下記コマンドを実行
-
-Mac
-```
-hoge=pwd && export PATH="$hoge:$PATH"
-chmod +x ./firebase-tools*
-mv firebase-tools* firebase
-```
-
-Window
-```
-set path=%cd%;%path%
-rename firebase-tools* firebase.exe
-```
-
----
-
-## FlutterFire CLIをインストール
-
-firebaseへログイン
-```
-firebase login
-```
-Yesを選択
-
-```
-dart pub global activate flutterfire_cli
-flutterfire configure --project=chat-hands-on
-```
-
----
-
-必要なパッケージを入れていきます。
-
+## step2. 
 
 ---
 ## 完成 :tada: :christmas_tree: :dart: :beer:
