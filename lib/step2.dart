@@ -1,4 +1,3 @@
-import 'package:bubble/bubble.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/foundation.dart';
@@ -108,71 +107,41 @@ class _ChatScreenState extends State<ChatScreen> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Expanded(
-              child: SingleChildScrollView(
-                reverse: true,
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).viewInsets.bottom),
-                child: Container(
-                  color: const Color.fromARGB(165, 0, 203, 210),
-                  height: MediaQuery.of(context).size.height,
-                  child: ListView.builder(
-                    controller: _scrollController,
-                    itemBuilder: (context, index) {
-                      final message = chatContents[index];
-                      return Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 8.0, bottom: 4.0, top: 8.0),
-                            child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                message.userName,
-                              ),
+              child: Container(
+                color: Color.fromARGB(188, 4, 170, 192),
+                height: MediaQuery.of(context).size.height,
+                child: ListView.builder(
+                  controller: _scrollController,
+                  itemBuilder: (context, index) {
+                    final message = chatContents[index];
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 8.0, bottom: 4.0, top: 8.0),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              message.userName,
                             ),
                           ),
-                          Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Text(
-                                message.message,
-                              ),
+                        ),
+                        Card(
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Text(
+                              message.message,
                             ),
                           ),
-                        ],
-                      );
-                    },
-                    itemCount: chatContents.length,
-                  ),
+                        ),
+                      ],
+                    );
+                  },
+                  itemCount: chatContents.length,
                 ),
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(8.0),
-              height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Expanded(
-                    child: TextField(
-                      keyboardType: TextInputType.text,
-                      minLines: 1,
-                      maxLines: 1,
-                      onSubmitted: (_) async => await _sendMessage(context),
-                      controller: _textController,
-                    ),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.send),
-                    onPressed: () async {
-                      await _sendMessage(context);
-                    },
-                  )
-                ],
-              ),
-            )
           ],
         ),
       ),
