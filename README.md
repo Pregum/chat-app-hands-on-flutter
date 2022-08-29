@@ -1,16 +1,12 @@
 # chat_app
 
-A new Flutter project.
+# Chat App
 
-## Getting Started
+ハンズオン用に作成したチャットアプリです。
 
-This project is a starting point for a Flutter application.
+## 機能一覧
 
-A few resources to get you started if this is your first Flutter project:
+* メッセージ受信機能
+* メッセージ送信機能
+* 受信時自動スクロール機能
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
