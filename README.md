@@ -8,3 +8,6 @@
 * メッセージ送信機能
 * 受信時自動スクロール機能
 
+## 資料
+
+https://www.docswell.com/slide/KJPWVK/edit
